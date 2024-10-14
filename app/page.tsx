@@ -17,9 +17,9 @@ import { useState } from "react";
 import { FaInstagram, FaTwitter, FaTelegram } from "react-icons/fa";
 
 export default function Home() {
-  const [openQuestion, setOpenQuestion] = useState(null);
+  const [openQuestion, setOpenQuestion] = useState<number | null>(null);
 
-  const toggleQuestion = (question) => {
+  const toggleQuestion = (question: number) => {
     setOpenQuestion(openQuestion === question ? null : question);
   };
 

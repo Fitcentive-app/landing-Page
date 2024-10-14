@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FaInstagram, FaTwitter, FaTelegram } from "react-icons/fa";
+import { FaTwitter, FaTelegram } from "react-icons/fa";
 
 export default function Home() {
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
@@ -200,7 +200,7 @@ export default function Home() {
       </div>
 
       {/* secction 3 */}
-      <div  id="about" className=" w-2/3 mx-auto mt-20 space-y-8">
+      <div id="about" className=" w-2/3 mx-auto mt-20 space-y-8">
         <div className="relative">
           {/* Card content */}
           <div className="absolute  w-[400px] h-[400px] bg-[#159D91] rounded-full opacity-15 filter blur-3xl z-0"></div>

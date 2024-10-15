@@ -15,8 +15,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaTwitter, FaTelegram } from "react-icons/fa";
+import TelegramPopup from "./telegramPopup"; // We'll create this component next
 
 export default function Home() {
+  const [showPopup, setShowPopup] = useState(false);
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
 
   const toggleQuestion = (question: number) => {
@@ -66,10 +68,14 @@ export default function Home() {
             incentives to form lifelong
             <span className="text-[#159D91]"> health habits</span>.
           </p>
-          <button className="bg-[#159D91] text-white font-extrabold py-3 px-8 md:py-4 md:px-10 text-md md:text-lg rounded-md hover:bg-[#0E6D64]">
+          <button
+            className="bg-[#159D91] text-white font-extrabold py-3 px-8 md:py-4 md:px-10 text-md md:text-lg rounded-md hover:bg-[#0E6D64]"
+            onClick={() => setShowPopup(true)}
+          >
             GET STARTED
           </button>
         </div>
+        {showPopup && <TelegramPopup onClose={() => setShowPopup(false)} />}
 
         <div className="w-1/2 relative hidden md:block">
           <div className="relative w-[500px] h-[500px]">

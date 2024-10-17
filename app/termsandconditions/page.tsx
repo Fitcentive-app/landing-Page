@@ -51,16 +51,16 @@ const TermsAndConditions = () => {
             </li>
             <li>
               <strong>Fitcentive Challenges –</strong> Challenges can be
-              one-on-one or group contests where you "deposit" points to hit
-              target metrics. Winners are users who hit the target metrics.
-              Winners will split the pot (minus admin and transaction fees), and
-              losers will lose their deposit. Challenge payments are issued up
-              to one week after the end of the Challenge. You have 48 hours to
-              log into your app and sync your data after the Challenge ends.
-              Challenge data is finalized after this 48-hour syncing window,
-              setting the results and determining winners and losers. If you do
-              not log in and sync your data, your metrics may not be fully
-              captured.
+              one-on-one or group contests where you &quot;deposit&quot; points
+              to hit target metrics. Winners are users who hit the target
+              metrics. Winners will split the pot (minus admin and transaction
+              fees), and losers will lose their deposit. Challenge payments are
+              issued up to one week after the end of the Challenge. You have 48
+              hours to log into your app and sync your data after the Challenge
+              ends. Challenge data is finalized after this 48-hour syncing
+              window, setting the results and determining winners and losers. If
+              you do not log in and sync your data, your metrics may not be
+              fully captured.
             </li>
             <li>
               <strong>Preventing Fraudulent Activity –</strong> Attempting to
@@ -96,7 +96,7 @@ const TermsAndConditions = () => {
             </li>
           </ol>
 
-          <p id="122c0167-f382-80a5-a484-eb28761bbce3">
+          <p>
             By using the Fitcentive app, you acknowledge that you have read and
             understood these terms and conditions and agree to be bound by them.
             If you have any questions or concerns, please contact us at{" "}

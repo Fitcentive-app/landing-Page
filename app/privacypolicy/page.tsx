@@ -101,7 +101,7 @@ const PrivacyPolicy: React.FC = () => {
           <li>Opt-Out: Users can revoke consent or unsubscribe at any time.</li>
         </ul>
 
-        <h2>7. Children's Privacy</h2>
+        <h2>7. Children&apos;s Privacy</h2>
         <p>
           Fitcentive is not intended for users under 18. We do not knowingly
           collect information from minors. If we learn of any such collection,
@@ -111,8 +111,8 @@ const PrivacyPolicy: React.FC = () => {
         <h2>8. Changes to This Privacy Policy</h2>
         <p>
           We may update this policy periodically. Users will be notified of
-          significant changes through our website and an updated “Last Updated”
-          date.
+          significant changes through our website and an updated &quot;Last
+          Updated&quot; date.
         </p>
 
         <h2>9. Contact Us</h2>

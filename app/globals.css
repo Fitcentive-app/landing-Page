@@ -26,11 +26,41 @@ body {
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg) translateX(var(--radius)) rotate(0deg);
+
+  @keyframes spin-0 {
+    from { transform: rotate(0deg) translate(230px) rotate(0deg); }
+    to { transform: rotate(360deg) translate(230px) rotate(-360deg); }
   }
-  to {
-    transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg);
+  @keyframes spin-1 {
+    from { transform: rotate(0deg) translate(180px) rotate(0deg); }
+    to { transform: rotate(360deg) translate(180px) rotate(-360deg); }
   }
-}
+  @keyframes spin-2 {
+    from { transform: rotate(0deg) translate(130px) rotate(0deg); }
+    to { transform: rotate(360deg) translate(130px) rotate(-360deg); }
+  }
+
+  @keyframes rotate0 {
+    from {
+      transform: rotate(0deg) translateX(230px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(230px) rotate(-360deg);
+    }
+  }
+  @keyframes rotate1 {
+    from {
+      transform: rotate(0deg) translateX(180px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(180px) rotate(-360deg);
+    }
+  }
+  @keyframes rotate2 {
+    from {
+      transform: rotate(0deg) translateX(130px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(130px) rotate(-360deg);
+    }
+  }

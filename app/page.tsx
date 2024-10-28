@@ -102,51 +102,32 @@ export default function Home() {
               />
             </div>
 
-            {/* {circles.map(({ radius, icons }, circleIndex) =>
-              icons.map((Icon, iconIndex) => {
-                const totalIcons = icons.length;
-                const angle =
-                  iconIndex * ((2 * Math.PI) / totalIcons) +
-                  (circleIndex * Math.PI) / 4;
-                return (
-                  <div
-                    key={`${circleIndex}-${iconIndex}`}
-                    className={`absolute w-12 h-12 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 animate-rotate-${circleIndex}-${iconIndex}`}
-                    style={{
-                      backgroundColor: brandColor,
-                      top: `${50 + (radius / 250) * 50 * Math.sin(angle)}%`,
-                      left: `${50 + (radius / 250) * 50 * Math.cos(angle)}%`,
-                    }}
-                  >
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                );
-              }),
-            )} */}
+
+
             {circles.map(({ radius, icons }, circleIndex) =>
-              icons.map((Icon, iconIndex) => {
-                const totalIcons = icons.length;
-                const angle =
-                  iconIndex * ((2 * Math.PI) / totalIcons) +
-                  (circleIndex * Math.PI) / 4;
-                return (
-                  <div
-                    key={`${circleIndex}-${iconIndex}`}
-                    className="absolute w-12 h-12 rounded-full flex items-center justify-center"
-                    style={{
-                      backgroundColor: brandColor,
-                      top: "48%",
-                      left: "52%",
-                      transform: `rotate(${angle}deg) translateX(${radius}px) rotate(-${angle}deg)`,
-                      animation: `rotate ${10 + circleIndex * 5}s linear infinite`,
-                      ["--radius" as string]: `${radius}px`,
-                    }}
-                  >
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                );
-              }),
-            )}
+  icons.map((Icon, iconIndex) => {
+    const angleOffset = iconIndex * 180; // Since there are 2 icons per circle, space them 180° apart
+    const centerX = "calc(50% - 24px)";
+    const centerY = "calc(50% - 24px)";
+    
+    return (
+      <div
+        key={`${circleIndex}-${iconIndex}`}
+        className="absolute w-12 h-12 rounded-full flex items-center justify-center"
+        style={{
+          backgroundColor: brandColor,
+          left: centerX,
+          top: centerY,
+          animation: `rotate${circleIndex} ${20 + circleIndex * 5}s linear infinite`,
+          transformOrigin: `${radius}px ${radius}px`,
+          transform: `rotate(${angleOffset}deg) translate(${radius}px) rotate(-${angleOffset}deg)`,
+        }}
+      >
+        <Icon className="w-6 h-6 text-white" />
+      </div>
+    );
+  })
+)}
           </div>
         </div>
       </main>
@@ -258,29 +239,29 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-[#073B37]/40 rounded-lg flex flex-col md:flex-row justify-center p-4 md:p-10 mx-auto bg-opacity-70 transition-all duration-300 ease-in-out hover:bg-[#073B37]/60 hover:border-2 hover:border-[#159D91] group">
-          <div className="flex flex-col w-full md:w-2/3 mt-4 md:mt-10">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-3 md:mb-4 transition-all duration-300 ease-in-out group-hover:text-[#159D91]">
-              SELL
-            </h2>
-            <p className="mb-3 md:mb-4 text-xl md:text-2xl font-medium">
-              Sell anonymized biometrics for rewards.
-              <br />
-              <span className="text-teal-300">Your data, your choice.</span>
-            </p>
-            <p className="text-gray-400 font-medium text-xl md:text-2xl transition-all duration-300 ease-in-out group-hover:text-teal-300">
-              Coming Soon
-            </p>
-          </div>
-          <div className="relative w-full md:w-90 h-48 md:h-60 mt-4 md:mt-0">
-            <div className="absolute w-full h-full max-w-[400px] max-h-[400px] bg-[#159D91] rounded-full opacity-15 filter blur-3xl z-0 transition-all duration-300 ease-in-out group-hover:opacity-25"></div>
-            <Image
-              src="/sell.png"
-              alt="Corporate Wellness"
-              layout="fill"
-              objectFit="contain"
-              className="rounded-lg transition-all duration-300 ease-in-out group-hover:scale-105"
-            />
+        <div className="bg-[#073B37]/40 rounded-lg flex flex-col md:flex-row justify-between p-4 md:p-10 mx-auto bg-opacity-70 transition-all duration-300 ease-in-out hover:bg-[#073B37]/60 hover:border-2 hover:border-[#159D91] group">
+  <div className="flex flex-col w-full md:w-1/2 mt-4 md:mt-10">
+    <h2 className="text-2xl md:text-3xl font-semibold mb-3 md:mb-4 transition-all duration-300 ease-in-out group-hover:text-[#159D91]">
+      SELL
+    </h2>
+    <p className="mb-3 md:mb-4 text-xl md:text-2xl font-medium">
+      Sell anonymized biometrics for rewards.
+      <br />
+      <span className="text-teal-300">Your data, your choice.</span>
+    </p>
+    <p className="text-gray-400 font-medium text-xl md:text-2xl transition-all duration-300 ease-in-out group-hover:text-teal-300">
+      Coming Soon
+    </p>
+  </div>
+  <div className="relative w-full md:w-1/3 h-48 md:h-60 mt-4 md:mt-0 md:ml-8">
+    <div className="absolute w-full h-full max-w-[400px] max-h-[400px] bg-[#159D91] rounded-full opacity-15 filter blur-3xl z-0 transition-all duration-300 ease-in-out group-hover:opacity-25"></div>
+    <Image
+      src="/sell.png"
+      alt="Corporate Wellness"
+      layout="fill"
+      objectFit="contain"
+      className="rounded-lg transition-all duration-300 ease-in-out group-hover:scale-105"
+    />
           </div>
         </div>
       </div>
@@ -297,43 +278,43 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-8 mt-8 md:mt-12 w-full md:grid-cols-2">
           {/* Individuals Card */}
           <div className="bg-[#073B37]/40 rounded-lg shadow-lg text-white filter burl-xl bg-opacity-70 transition-all duration-300 ease-in-out hover:bg-[#073B37]/60 hover:border-2 hover:border-[#159D91] group">
-            <div className="flex justify-center gap-2 overflow-hidden mb-4 mt-6 md:mt-10">
-              {/* Icon 1 */}
-              <div className="flex justify-center transition-all duration-300 ease-in-out group-hover:scale-105">
+            <div className="flex justify-center items-center gap-4 md:gap-6 overflow-hidden mb-4 mt-6 md:mt-10 px-4">
+              {/* Side Icon 1 */}
+              <div className="flex-1 flex justify-center items-center h-[75px] md:h-[90px] transition-all duration-300 ease-in-out group-hover:scale-105">
                 <Image
                   src="/swords.png"
                   alt="Corporate Wellness"
                   width={100}
                   height={75}
-                  className="w-20 h-15 md:w-40 md:h-30 rounded-lg bg-[#073B37]/30 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
+                  className="w-26 md:w-34 object-contain rounded-lg bg-[#073B37]/30 p-2 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
                 />
               </div>
-              {/* Icon 2 */}
-              <div className="flex justify-center transition-all duration-300 ease-in-out group-hover:scale-105">
+              {/* Center Icon */}
+              <div className="flex-1 flex justify-center items-center h-[100px] md:h-[130px] transition-all duration-300 ease-in-out group-hover:scale-105">
                 <Image
                   src="/dna.png"
                   alt="Corporate Wellness"
                   width={120}
                   height={90}
-                  className="w-24 h-18 md:w-60 md:h-35 rounded-lg bg-[#073B37]/30 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
+                  className="w-40 md:w-56 object-contain rounded-lg bg-[#073B37]/30 p-2 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
                 />
               </div>
-              {/* Icon 3 */}
-              <div className="flex justify-center transition-all duration-300 ease-in-out group-hover:scale-105">
+              {/* Side Icon 2 */}
+              <div className="flex-1 flex justify-center items-center h-[75px] md:h-[90px] transition-all duration-300 ease-in-out group-hover:scale-105">
                 <Image
                   src="/micros.png"
                   alt="Corporate Wellness"
                   width={100}
                   height={75}
-                  className="w-20 h-15 md:w-40 md:h-30 rounded-lg bg-[#073B37]/30 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
+                  className="w-26 md:w-34 object-contain rounded-lg bg-[#073B37]/30 p-2 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
                 />
               </div>
             </div>
             <div className="p-6 md:p-8">
-              <h3 className="text-xl md:text-2xl text-left font-semibold mb-3 md:mb-4 transition-all duration-300 ease-in-out group-hover:text-[#159D91]">
+              <h3 className="text-2xl md:text-3xl text-left font-semibold mb-3 md:mb-4 transition-all duration-300 ease-in-out group-hover:text-[#159D91]">
                 Individuals
               </h3>
-              <p className="text-sm md:text-md text-left font-semibold text-gray-300 transition-all duration-300 ease-in-out group-hover:text-white">
+              <p className="text-lg md:text-xl text-left font-normal text-gray-300 transition-all duration-300 ease-in-out group-hover:text-white">
                 Challenge others, form lifelong habits. Holistic approach to
                 health backed by science.
               </p>
@@ -342,43 +323,43 @@ export default function Home() {
 
           {/* Corporate Wellness Card */}
           <div className="bg-[#073B37]/40 rounded-lg shadow-lg text-white bg-opacity-70 transition-all duration-300 ease-in-out hover:bg-[#073B37]/60 hover:border-2 hover:border-[#159D91] group">
-            <div className="flex justify-center gap-2 overflow-hidden mb-4 mt-6 md:mt-10">
-              {/* Icon 1 */}
-              <div className="flex justify-center transition-all duration-300 ease-in-out group-hover:scale-105">
+            <div className="flex justify-center items-center gap-4 md:gap-6 overflow-hidden mb-4 mt-6 md:mt-10 px-4">
+              {/* Side Icon 1 */}
+              <div className="flex-1 flex justify-center items-center h-[75px] md:h-[90px] transition-all duration-300 ease-in-out group-hover:scale-105">
                 <Image
-                  width={100}
-                  height={75}
                   src="/hearth.png"
                   alt="Corporate Wellness"
-                  className="w-20 h-15 md:w-40 md:h-30 rounded-lg bg-[#073B37]/30 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
-                />
-              </div>
-              {/* Icon 2 */}
-              <div className="flex justify-center transition-all duration-300 ease-in-out group-hover:scale-105">
-                <Image
-                  width={120}
-                  height={90}
-                  src="/money.png"
-                  alt="Corporate Wellness"
-                  className="w-24 h-18 md:w-60 md:h-35 rounded-lg bg-[#073B37]/30 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
-                />
-              </div>
-              {/* Icon 3 */}
-              <div className="flex justify-center transition-all duration-300 ease-in-out group-hover:scale-105">
-                <Image
                   width={100}
                   height={75}
+                  className="w-26 md:w-34 object-contain rounded-lg bg-[#073B37]/30 p-2 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
+                />
+              </div>
+              {/* Center Icon */}
+              <div className="flex-1 flex justify-center items-center h-[100px] md:h-[130px] transition-all duration-300 ease-in-out group-hover:scale-105">
+                <Image
+                  src="/money.png"
+                  alt="Corporate Wellness"
+                  width={120}
+                  height={90}
+                  className="w-40 md:w-56 object-contain rounded-lg bg-[#073B37]/30 p-2 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
+                />
+              </div>
+              {/* Side Icon 2 */}
+              <div className="flex-1 flex justify-center items-center h-[75px] md:h-[90px] transition-all duration-300 ease-in-out group-hover:scale-105">
+                <Image
                   src="/search.png"
                   alt="Corporate Wellness"
-                  className="w-20 h-15 md:w-40 md:h-30 rounded-lg bg-[#073B37]/30 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
+                  width={100}
+                  height={75}
+                  className="w-26 md:w-34 object-contain rounded-lg bg-[#073B37]/30 p-2 transition-all duration-300 ease-in-out group-hover:bg-[#073B37]/50"
                 />
               </div>
             </div>
             <div className="p-6 md:p-8">
-              <h3 className="text-xl md:text-2xl text-left font-semibold mb-3 md:mb-4 transition-all duration-300 ease-in-out group-hover:text-[#159D91]">
+              <h3 className="text-2xl md:text-3xl text-left font-semibold mb-3 md:mb-4 transition-all duration-300 ease-in-out group-hover:text-[#159D91]">
                 Corporate Wellness
               </h3>
-              <p className="text-sm md:text-md font-semibold text-left text-gray-300 transition-all duration-300 ease-in-out group-hover:text-white">
+              <p className="text-lg md:text-xl font-normal text-left text-gray-300 transition-all duration-300 ease-in-out group-hover:text-white">
                 100% money-back guarantee and objective results for healthcare
                 cost cuts. Employees earn cash or USDC rewards.
               </p>

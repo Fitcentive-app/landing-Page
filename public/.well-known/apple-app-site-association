@@ -5,9 +5,19 @@
       {
         "appID": "652PU5TJNX.com.fitcentiveLLC.app",
         "paths": [
-          "/challenge/*"
+          "/*"
         ]
       }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [
+      "652PU5TJNX.com.fitcentiveLLC.app"
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "652PU5TJNX.com.fitcentiveLLC.app"
     ]
   }
 }

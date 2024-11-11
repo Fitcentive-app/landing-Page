@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "652PU5TJNX.com.fitcentiveLLC.app",
+        "paths": [
+          "/challenge/*"
+        ]
+      }
+    ]
+  }
+}

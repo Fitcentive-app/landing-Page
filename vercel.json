@@ -12,7 +12,7 @@
   ],
   "redirects": [
     {
-      "source": "/challenge/:path*",
+      "source": "/link/:path*",
       "destination": "https://testflight.apple.com/join/bu3A9cvJ",
       "permanent": true
     }

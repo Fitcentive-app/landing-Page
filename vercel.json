@@ -9,5 +9,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/challenge/:path*",
+      "destination": "https://testflight.apple.com/join/bu3A9cvJ",
+      "permanent": true
+    }
   ]
 }

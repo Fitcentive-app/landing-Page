@@ -481,16 +481,15 @@ export default function Home() {
               <div className="flex-grow">
                 <div className="flex justify-between items-center">
                   <h3 className="font-semibold text-sm md:text-base pr-2">
-                    Do I need a Whoop to participate?
+                    Which smart watches do you support?
                   </h3>
                   <span className="text-xl">
-                    {openQuestion === 4 ? "▲" : ""}
+                    {openQuestion === 4 ? "▲" : "▼"}
                   </span>
                 </div>
                 {openQuestion === 4 && (
                   <p className="mt-2 text-gray-300 text-sm md:text-base">
-                    Yes, you need a Whoop band to track your health data and
-                    participate in the challenges.
+                    Currently, we support Apple and Whoop. We are actively working on adding support for Fitbit and Garmin watches.
                   </p>
                 )}
               </div>

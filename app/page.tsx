@@ -70,7 +70,7 @@ export default function Home() {
           </p>
           <button
             className="bg-[#159D91] text-white font-extrabold py-3 px-8 md:py-4 md:px-10 text-md md:text-lg rounded-md hover:bg-[#0E6D64]"
-            onClick={() => setShowPopup(true)}
+            onClick={() => window.open('https://testflight.apple.com/join/bu3A9cvJ', '_blank')}
           >
             GET STARTED
           </button>
@@ -145,20 +145,28 @@ export default function Home() {
               Fueled by Biometrics
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gray-900 text-white hover:bg-gray-800 py-2 px-4 rounded flex items-center justify-center">
+              <button 
+                className="bg-gray-900/50 text-white/50 cursor-not-allowed py-2 px-4 rounded flex items-center justify-center"
+                disabled
+              >
                 <Image
                   src="/playstore.png"
                   width={24}
                   height={24}
                   alt="Google Play icon"
-                  className="mr-2"
+                  className="mr-2 opacity-50"
                 />
                 <div className="flex flex-col items-start">
                   <span className="text-xs">Get it on</span>
                   <span className="text-sm font-normal">Google Play</span>
+                  <span className="text-xs ml-1">Coming Soon</span>
                 </div>
+                
               </button>
-              <button className="bg-gray-900 text-white hover:bg-gray-800 py-2 px-4 rounded flex items-center justify-center">
+              <button 
+                className="bg-gray-900 text-white hover:bg-gray-800 py-2 px-4 rounded flex items-center justify-center"
+                onClick={() => window.open('https://testflight.apple.com/join/bu3A9cvJ', '_blank')}
+              >
                 <Image
                   src="/applelo.png"
                   width={24}
@@ -167,8 +175,8 @@ export default function Home() {
                   className="mr-2"
                 />
                 <div className="flex flex-col items-start">
-                  <span className="text-xs">Download on the</span>
-                  <span className="text-sm font-normal">App Store</span>
+                  <span className="text-xs">Download on</span>
+                  <span className="text-sm font-normal">TestFlight</span>
                 </div>
               </button>
             </div>
@@ -476,7 +484,7 @@ export default function Home() {
                     Do I need a Whoop to participate?
                   </h3>
                   <span className="text-xl">
-                    {openQuestion === 4 ? "▲" : "▼"}
+                    {openQuestion === 4 ? "▲" : ""}
                   </span>
                 </div>
                 {openQuestion === 4 && (
@@ -491,39 +499,62 @@ export default function Home() {
         </div>
       </div>
       <footer className="bg-dark text-white py-4 mt-10">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          {/* Copyright Text */}
-          <p className="text-sm text-gray-400">
-            © 2024 Fitcentive, All Rights Reserved
-          </p>
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Links and Copyright Section */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Copyright Text */}
+            <p className="text-sm text-gray-400">
+              © 2024 Fitcentive, All Rights Reserved
+            </p>
 
-          {/* Social Media Icons */}
-          <div className="flex space-x-4">
-            <a
-              href="https://t.me/fitcentive"
-              className="text-gray-400 hover:text-white transition duration-300"
-            >
-              <FaTelegram className="h-6 w-6" />
-            </a>
-            <a
-              href="https://x.com/fitcentive"
-              className="text-gray-400 hover:text-white transition duration-300"
-            >
-              <FaTwitter className="h-6 w-6" />
-            </a>
-            <a
-              href="https://warpcast.com/fitcentive"
-              className="text-gray-400 hover:text-white "
-            >
-              {/* <FaInstagram className='h-6 w-6' /> */}
-              <Image
-                src="/transparent-white.png"
-                width={10}
-                height={10}
-                alt="farcaster"
-                className="h-7 w-7"
-              />
-            </a>
+            {/* Legal Links */}
+            <div className="flex gap-4 text-sm text-gray-400">
+              <a 
+                href="https://fitcentive.app/privacypolicy" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-white transition duration-300"
+              >
+                Privacy Policy
+              </a>
+              <span className="text-gray-600">|</span>
+              <a 
+                href="https://fitcentive.app/termsandconditions" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-white transition duration-300"
+              >
+                Terms & Conditions
+              </a>
+            </div>
+
+            {/* Social Media Icons */}
+            <div className="flex space-x-4">
+              <a
+                href="https://t.me/fitcentive"
+                className="text-gray-400 hover:text-white transition duration-300"
+              >
+                <FaTelegram className="h-6 w-6" />
+              </a>
+              <a
+                href="https://x.com/fitcentive"
+                className="text-gray-400 hover:text-white transition duration-300"
+              >
+                <FaTwitter className="h-6 w-6" />
+              </a>
+              <a
+                href="https://warpcast.com/fitcentive"
+                className="text-gray-400 hover:text-white"
+              >
+                <Image
+                  src="/transparent-white.png"
+                  width={10}
+                  height={10}
+                  alt="farcaster"
+                  className="h-7 w-7"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </footer>

@@ -5,20 +5,20 @@ import Image from "next/image";
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="prose mx-auto px-6 py-8 bg-black">
+    <div className="prose mx-auto px-6 py-8 bg-black text-white">
       <header className="w-full p-5 flex justify-between items-center px-9 mb-16">
         <Link
           href="/"
-          className="text-2xl font-extrabold font-sans italic text-[30px]"
+          className="text-2xl font-extrabold font-sans italic text-[30px] text-white"
         >
           fitcentive
         </Link>
       </header>
 
-      <main className="flex-grow container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+      <main className="flex-grow container mx-auto px-4 py-8 text-white">
+        <h1 className="text-4xl font-bold mb-8 text-white">Privacy Policy</h1>
 
-        <p>
+        <p className="text-white">
           Welcome to Fitcentive. This Privacy Policy outlines how we collect,
           use, and protect user personal information when using our services.
           User privacy is important to us, and we are committed to ensuring that
